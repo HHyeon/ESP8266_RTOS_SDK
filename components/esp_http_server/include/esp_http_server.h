@@ -783,6 +783,14 @@ esp_err_t httpd_query_key_value(const char *qry, const char *key, char *val, siz
  */
 esp_err_t httpd_resp_send(httpd_req_t *r, const char *buf, ssize_t buf_len);
 
+
+
+
+esp_err_t httpd_resp_send_hdr_only(httpd_req_t *r, ssize_t buf_len);
+esp_err_t httpd_resp_send_buf(httpd_req_t *r, const char *buf, ssize_t buf_len);
+
+
+
 /**
  * @brief   API to send one HTTP chunk
  *
@@ -859,6 +867,10 @@ esp_err_t httpd_resp_set_status(httpd_req_t *r, const char *status);
 #define HTTPD_TYPE_JSON   "application/json"            /*!< HTTP Content type JSON */
 #define HTTPD_TYPE_TEXT   "text/html"                   /*!< HTTP Content type text/HTML */
 #define HTTPD_TYPE_OCTET  "application/octet-stream"    /*!< HTTP Content type octext-stream */
+#define HTTPD_TYPE_TEXT_PLAIN "text/plain"
+#define HTTPD_TYPE_IMAGE_JPEG "image/jpeg"
+
+
 
 /**
  * @brief   API to set the HTTP content type

@@ -114,8 +114,7 @@ esp_err_t echo_post_handler(httpd_req_t *req)
 
     while (remaining > 0) {
         /* Read the data for the request */
-        if ((ret = httpd_req_recv(req, buf,
-                        MIN(remaining, sizeof(buf)))) <= 0) {
+        if ((ret = httpd_req_recv(req, buf,MIN(remaining, sizeof(buf)))) <= 0) {
             if (ret == HTTPD_SOCK_ERR_TIMEOUT) {
                 /* Retry receiving if timeout occurred */
                 continue;
